@@ -63,9 +63,17 @@ create table Companys (
 )
 
 create table Supports (
-
+	Id int primary key not null,
+	StaffId Varchar(20) foreign key references Staffs(Id),
+	Phone Varchar(20) not null,
+	Status int not null
 )
 
 create table Contacts (
-
+	Id int primary key not null,
+	UserId Varchar(20) foreign key references Users(Id),
+	Topic Varchar(100),
+	Message Varchar(5000) not null,
+	Phone Varchar(20) not null,
+	Map Varchar(500)
 )
